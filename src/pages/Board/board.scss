@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+
+body{
+    background: #dfd7d4;
+}
+
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+.board-container{
+    margin-left: 5%;
+    width: 90%;
+}
+
+.title-board:focus{
+outline: 2px solid gray;
+outline-offset: 3px;
+border-radius: 4px;
+background-color: white;
+// font-size: 22px;
+// line-height: 40px;
+}
+.title-board{
+    transform: translate(9px, 70px);
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 28px;
+    transition: .4s;
+}
+.board-content{
+    width: 800px;
+    height: 450px;
+    overflow: auto;
+    display: flex;
+    margin-top: 130px;
+   
+}
+.board-list{
+    
+    min-width: 270px;
+   
+    background-color: blanchedalmond;
+    border-radius: 20px;
+  
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.board-content> button{
+    min-width: 275px;
+    height: 56px;
+    background-color: rgba(128, 128, 128, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    justify-content: space-evenly;
+    cursor: pointer;
+
+}
+
+.board-content> button:hover{
+    background-color: rgba(128, 128, 128, 0.3);
+}
+
+.button-home{
+    top: 20px;
+    padding: 5px;
+    border: 1px solid black;
+    background: #ff8383;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    position: relative;
+}
+
