@@ -1,37 +1,39 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { deleteBoard } from '../../../../store/modules/boards/actions';
 import { AppDispatch } from '../../../../store/store';
 import './board.scss';
 
-function BoardHome(props: { id: number; title: string }) {
-
-
+const BoardHome = (props: { id: number; title: string }) => {
 	const dispatch: AppDispatch = useDispatch();
-	
 
-	
-	
+	const ref = useRef<HTMLInputElement>(null);
 
+	const navigate = useNavigate();
 
+	const redirect = () => {
+		ref.current?.classList.toggle('board-animation');
+		setTimeout(() => {
+			navigate(`/board/${props.id}`);
+		}, 700);
+	};
 
 	return (
-		
-		<Link to={`/board/${props.id}`}>
-			<div
-				className='board-cart'
+		<div onClick={redirect} className='board-cart' ref={ref}>
+			<h2 className='board_title'>{props.title}</h2>
+			<button
+				onClick={e => {
+					e.preventDefault();
+					e.stopPropagation();
+					dispatch(deleteBoard(props.id));
+				}}
 			>
-				<h1>{props.title}</h1>
-				<button onClick={e => {
-						e.preventDefault();
-						dispatch(deleteBoard(props.id));
-					}}>
-					Удалить
-				</button>
-			</div>
-		</Link>
+				Удалить
+			</button>
+		</div>
 	);
-}
+};
 
 export default BoardHome;

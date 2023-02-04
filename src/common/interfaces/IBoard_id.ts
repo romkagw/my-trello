@@ -6,7 +6,8 @@ export default interface IBoard_id {
 		id: number;
 		username: string;
 	};
-	lists: { title: string;
+	lists: { id:number;
+		     title: string;
 		     position: number; 
 			 cards:ICard[];}[];
 }
