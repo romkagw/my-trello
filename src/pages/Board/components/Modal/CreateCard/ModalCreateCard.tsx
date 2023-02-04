@@ -1,9 +1,8 @@
 import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { GrClose } from 'react-icons/gr';
-import { AppDispatch, RootState } from '../../../../../store/store';
+import { AppDispatch } from '../../../../../store/store';
 import './modalCreateCard.scss';
-import IBoard_id from '../../../../../common/interfaces/IBoard_id';
 import { createCard } from '../../../../../store/modules/board/actions';
 import { nameHandler } from '../../../../../common/function/nameHandler';
 import { useParams } from 'react-router-dom';
@@ -19,7 +18,6 @@ const ModalCreateCard = ({ onClose, list_id, position }: ICreateCard) => {
 	const { board_id } = useParams();
 	const textareaRef = useRef<HTMLTextAreaElement>(null);
 	const dispatch: AppDispatch = useDispatch();
-	const state: IBoard_id = useSelector((state: RootState) => state.board);
 	const [nameCard, setNameCard] = useState('');
 	const [nameError, setNameError] = useState('');
 	const [validForma, setValidForm] = useState(false);

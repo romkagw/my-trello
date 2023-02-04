@@ -6,7 +6,7 @@ import './home.scss';
 import { AppDispatch, RootState } from '../../store/store';
 import { getBoards } from '../../store/modules/boards/actions';
 import { CreateBoardForm } from './components/CreateBoardForm/CreateBoardForm';
-import BoardHome from './components/Board/BoardHome';
+import BoardHome from './components/BoardHome/BoardHome';
 import IBoard from '../../common/interfaces/IBoard';
 import Modal from '../../common/components/Modal/Modal';
 import Loader from '../../common/components/Loader/loader';

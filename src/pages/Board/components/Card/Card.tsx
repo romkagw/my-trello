@@ -1,19 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './card.scss';
-import { ICard } from '../../../../common/interfaces/ICard';
+import { useEffect, useRef, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { BsPencil } from 'react-icons/bs';
-import Modal from '../../../../common/components/Modal/Modal';
-import userEvent from '@testing-library/user-event';
-import resizeTextarea from '../../../../common/function/resizeTextarea';
-import { RiDeleteBin2Fill } from 'react-icons/ri';
 import { MdOutlineDone } from 'react-icons/md';
+import { RiDeleteBin2Fill } from 'react-icons/ri';
+import { ICard } from '../../../../common/interfaces/ICard';
+import resizeTextarea from '../../../../common/function/resizeTextarea';
 import useOutsideAlerter from '../../../../common/hooks/useOutsideAlerter';
 import { nameHandler } from '../../../../common/function/nameHandler';
 import checkLengthText from '../../../../common/function/checkLengthText ';
 import { AppDispatch } from '../../../../store/store';
-import { useDispatch } from 'react-redux';
 import { editCard, removeCard } from '../../../../store/modules/board/actions';
-import { useParams } from 'react-router-dom';
+import './card.scss';
 
 const Card = ({ title, listId, id, position }: ICard) => {
 	const dispatch: AppDispatch = useDispatch();

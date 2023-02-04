@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GrClose } from 'react-icons/gr';
 import './modalCreateList.scss';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +7,6 @@ import IBoard_id from '../../../../../common/interfaces/IBoard_id';
 import { addList } from '../../../../../store/modules/board/actions';
 import { nameHandler } from '../../../../../common/function/nameHandler';
 import checkLengthText from '../../../../../common/function/checkLengthText ';
-import addElementByPressingEnter from '../../../../../common/function/addElementByPressingEnter';
 interface ICreateList {
 	onClose: () => void;
 	board_id?: string;
